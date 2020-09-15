@@ -46,7 +46,7 @@ class ChildFrame(wx.Frame):
     def onOpen(self, ev):
         # self.txtA.SetLabelText("파일 열기를 선택하였습니다.")
         # 파일 열기
-        f = open("C:\\Users\\Hyelin\\bigdata\\0824터미널명령.txt","r")
+        f = open("C:\\Users\\***\\bigdata\\***.txt","r")
         data  = f.read()
         # 읽어오기
         self.txtA.SetLabelText(data)
