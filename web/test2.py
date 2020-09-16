@@ -45,9 +45,14 @@ class ChildFrame(wx.Frame):
         self.txtA.SetLabelText("새 문서를 선택하였습니다.")
     def onOpen(self, ev):
         # self.txtA.SetLabelText("파일 열기를 선택하였습니다.")
-        # 파일 열기
-        f = open("C:\\Users\\***\\bigdata\\***.txt","r")
-        data  = f.read()
+
+        # 파일을 선택해서 열기
+        dlg = wx.FileDialog(self, "파일 선택", "c:\\", "", "*.*", style=wx.ID_OPEN)
+        if dlg.ShowModal() == wx.ID_OK:
+            path = dlg.GetPath()
+
+        f = open(path, "r")
+        data = f.read()
         # 읽어오기
         self.txtA.SetLabelText(data)
         f.close()
